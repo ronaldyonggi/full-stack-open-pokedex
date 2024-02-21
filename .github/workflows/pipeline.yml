@@ -23,3 +23,5 @@ jobs:
       - name: Create production build
         run: npm run build
 
+      - name: Run tests
+        run: npm run test
