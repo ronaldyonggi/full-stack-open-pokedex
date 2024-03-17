@@ -16,3 +16,4 @@ app.listen(PORT, () => {
 })
 
 // NEW FEATURE HERE!!!
+// Additional new feature to check if deployment only occurs when branches are merged
