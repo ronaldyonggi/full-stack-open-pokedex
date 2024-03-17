@@ -26,3 +26,10 @@ primary_region = 'hkg'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "10s"
+  path = "/health"
