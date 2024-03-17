@@ -14,3 +14,6 @@ app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`server started on port ${PORT}`)
 })
+
+// NEW FEATURE HERE!!!
+// Additional new feature to check if deployment only occurs when branches are merged
