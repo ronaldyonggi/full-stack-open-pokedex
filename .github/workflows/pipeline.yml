@@ -18,17 +18,24 @@ jobs:
         run: npm install
 
       - name: Check style
+        id: check-style
         run: npm run eslint
 
       - name: Create production build
+        id: build-prod
         run: npm run build
+        if: steps.check-style.outcome == 'success'
 
-      - name: Run tests
+      - name: Run jest tests
+        id: test-jest
         run: npm run test
+        if: steps.build-prod.outcome == 'success'
 
       - name: e2e tests
+        id: test-e2e
         uses: cypress-io/github-action@v6
         with:
             command: npm run test:e2e
             start: npm run start-prod
             wait-on: http://localhost:5000
+        if: steps.test-jest.outcome == 'success'
