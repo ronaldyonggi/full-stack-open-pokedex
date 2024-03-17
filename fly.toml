@@ -33,3 +33,6 @@ primary_region = 'hkg'
   method = "GET"
   timeout = "10s"
   path = "/health"
+
+[deploy]
+  strategy = "canary"
